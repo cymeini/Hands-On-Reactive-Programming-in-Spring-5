@@ -1,12 +1,12 @@
 package com.example.rpws.chapter2;
 
 public class Temperature {
-    private final Double value;
+    private final double value;
 
     public Temperature(Double value) {
         this.value = value;
     }
-    public Double getValue() {
+    public double getValue() {
         return value;
     }
 
