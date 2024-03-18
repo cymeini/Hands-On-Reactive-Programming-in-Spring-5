@@ -7,8 +7,7 @@ import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-import static java.util.concurrent.TimeUnit.MICROSECONDS;
-import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.util.concurrent.TimeUnit.*;
 
 public class TemperatureSensor {
     private final ApplicationEventPublisher publisher;
@@ -27,7 +26,7 @@ public class TemperatureSensor {
     private void probe() {
         double temperature = 16 + rnd.nextGaussian() * 10;
         publisher.publishEvent(new Temperature(temperature));
-        executor.schedule(this::probe, rnd.nextInt(5000), MICROSECONDS);
+        executor.schedule(this::probe, rnd.nextInt(5000), MILLISECONDS);
     }
 
 
